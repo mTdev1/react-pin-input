@@ -119,7 +119,7 @@ class PinItem extends Component {
         placeholder={this.props.placeholder ? this.props.placeholder : value}
         aria-label={this.props.ariaLabel ? this.props.ariaLabel : value}
         maxLength='1'
-        autoComplete='off'
+        autoComplete={this.props.autoComplete}
         type={this.props.secret ? 'password' : inputType}
         inputMode={inputMode || 'text'}
         pattern={this.props.type === 'numeric' ? '[0-9]*' : '^[a-zA-Z0-9]+$'}
@@ -140,6 +140,7 @@ class PinItem extends Component {
 }
 
 PinItem.propTypes = {
+  autoComplete: PropTypes.string,
   initialValue: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onBackspace: PropTypes.func.isRequired,

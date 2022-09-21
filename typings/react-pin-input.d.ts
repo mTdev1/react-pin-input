@@ -4,6 +4,7 @@ declare module "react-pin-input" {
   type InputType = "numeric" | "custom";
 
   interface PinInputProps {
+    autoComplete?: string;
     length: number;
     initialValue?: number | string;
     type?: InputType;

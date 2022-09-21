@@ -83,6 +83,7 @@ class PinInput extends Component {
       <div style={this.props.style} className='pincode-input-container'>
         {this.values.map((e, i) => (
           <PinItem
+            autoComplete={this.props.autoComplete}
             initialValue={e}
             ref={n => (this.elements[i] = n)}
             key={i}
@@ -108,6 +109,7 @@ class PinInput extends Component {
 }
 
 PinInput.propTypes = {
+  autoComplete: PropTypes.string,
   initialValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   length: PropTypes.number.isRequired,
   type: PropTypes.string,
@@ -128,6 +130,7 @@ PinInput.propTypes = {
 };
 
 PinInput.defaultProps = {
+  autoComplete: 'off',
   initialValue: '',
   type: 'numeric',
   secret: false,
